@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEIGHT CONVERTER</title>
+    <style>
+      body{
+          background-color: darkcyan;
+      }  
+      .container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+      }
+      .output-area{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+      }
+      .cards
+      {
+          /* padding: 5px 5px; */
+          margin: 5px auto;
+          border: 2px solid black;
+          display: flex;
+          flex-direction: column;
+          width: 200px;
+          border-radius: 5px;
+          background-color: rgba(160, 81, 45, 0.431);
+      }
+      
+      input{
+          margin: 5px 5px;
+          padding: 5px 5px;
+      }
+      #input{
+          color: snow;
+          border-bottom: 3px solid blanchedalmond;
+          border-top: 3px solid rgb(255, 153, 0);
+          border-left: 3px solid rgb(54, 255, 4);
+          border-right: 3px solid rgb(255, 0, 0);
+          background-color: rgba(222, 184, 135, 0.356);
+      }
+      #btn{
+          background-color: rgba(238, 255, 2, 0.76);
+
+      }
+      .outputunit{
+          padding: 3px 3px;
+          margin: 3px 3px;
+      }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weight Converter</h1>
+    
+    <div class="input">
+        <input type="text" name="input" id="input" placeholder="In Grams">
+        <!-- <input type="button" id="btn"  value="FIND"> -->
+    </div>
+</div>
+
+    <div class="output-area">
+        <div class="cards">
+            <div id="block1">
+                <h3>Kilograms</h3>
+                <div class="outputunit" id="kgout"><h4></h4></div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div id="block2">
+                <h3>Hectograms</h3>
+                <div class="outputunit" id="Heout"><h4></h4></div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div id="block3">
+                <h3>Decagrams</h3>
+                <div class="outputunit" id="dcout"><h4></h4></div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div id="block4">
+                <h3>Decigrams</h3>
+                <div class="outputunit" id="deout"><h4></h4></div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div id="block5">
+                <h3>Centigrams</h3>
+                <div class="outputunit" id="ctout"><h4></h4></div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div id="block6">
+                <h3>Miligrams</h3>
+                <div class="outputunit" id="miout"><h4></h4></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('input').addEventListener('input',function(e){
+            let grams = e.target.value;
+            document.getElementById('kgout').innerHTML = grams/1000;
+            document.getElementById('Heout').innerHTML = grams/100;
+            document.getElementById('dcout').innerHTML = grams/10;
+            document.getElementById('deout').innerHTML = grams*10;
+            document.getElementById('ctout').innerHTML = grams*100;
+            document.getElementById('miout').innerHTML = grams*1000;
+            
+        });
+    </script>
+</body>
+</html>
